@@ -8,18 +8,12 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileBasenameNoExtension}.exe"
+                "-g", "${file}", "-o", "${fileBasenameNoExtension}.exe"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            }
         }
     ]
 }
