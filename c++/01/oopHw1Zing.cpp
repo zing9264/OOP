@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-	
+
 	char pat[500];
 	string str;
 	char npat[500];
@@ -16,6 +16,7 @@ int main(){
 		cout<<"please input a sentence:";
 		cin.getline(pat,500);	
 		i=0,j=0;
+		
 		str=pat;
 		n=str.length();
 		for(i=0;i<n;i++){
