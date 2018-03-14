@@ -24,5 +24,12 @@
             "-I${workspaceRoot}\\include",
             "-I${cwd}"
         ],
-        "C_Cpp.intelliSenseEngine": "Tag Parser"
+        "C_Cpp.intelliSenseEngine": "Tag Parser",
+        "files.associations": {
+            "*.tcc": "cpp",
+            "system_error": "cpp",
+            "initializer_list": "cpp",
+            "istream": "cpp",
+            "iosfwd": "cpp"
+        }
     }
