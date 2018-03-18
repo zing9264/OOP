@@ -27,20 +27,20 @@ int locater(fstream &fp, string &target, int num)
 {
     vector<string> word;
     string line;
-    string delimiter("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ");
+    string delimiter("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ '");
     size_t index = 0;
     int n = 0;
-    while (getline(fp,line))
+    while (getline(fp, line))
     {
         index = 0;
-        while ((index = line.find_first_not_of(delimiter, index))!= string::npos)
+        while ((index = line.find_first_not_of(delimiter, index)) != string::npos)
         {
-            line.replace(index, 1," ");
-            cout << "index:" << index << endl;
+            line.replace(index, 1, " ");
+            //   cout << "index:" << index << endl;
         }
         word.clear();
         stringstream load(line);
-        cout << load.str() << endl;
+        // cout << load.str() << endl;
         word.assign(istream_iterator<string>(load), istream_iterator<string>());
         for (int i = 0; i < word.size(); i++)
         {
@@ -52,11 +52,11 @@ int locater(fstream &fp, string &target, int num)
             }
             if (num == 0)
             {
-                cout<< "we find it is ==="<< n << endl;
+                cout << n << endl;
                 return 0;
             }
         }
-        cout << "word:" << n << endl;
+        // cout << "word:" << n << endl;
     }
     cout << "No matching entry" << endl;
     return 0;
@@ -88,7 +88,7 @@ int main()
             arr.push_back(token);
             n++;
         }
-        cout << "n=" << n << endl;
+        //  cout << "n=" << n << endl;
 
         if (arr[0] == "load" && n == 2) //load entry
         {
@@ -115,7 +115,7 @@ int main()
                 convert_stoi.clear();
                 convert_stoi << arr[2];
                 convert_stoi >> num;
-                cout << "num=" << num << endl;
+                // cout << "num=" << num << endl;
                 fp.seekg(0, fp.beg);
                 locater(fp, arr[1], num);
             }
